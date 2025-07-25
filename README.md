@@ -1,9 +1,11 @@
 
-# 🤖 ChatBot CLI (Dockerized)
+# 🤖 ChatBot CLI
 
 A simple AI chatbot running via CLI using Docker and OpenAI.
 
 ---
+
+# 1. Run via Docker 🐳 
 
 ## 📦 Prerequisites
 
@@ -29,13 +31,13 @@ sudo apt install docker.io
 ### Pull the image from Docker Hub
 
 ```bash
-docker pull jaycode8/chatbot:v1
+docker pull jaycode8/chatbot:v2
 ```
 
 ### Run the chatbot (interactive mode)
 
 ```bash
-docker run -it --name chatbot jaycode8/chatbot:v1
+docker run -it --name chatbot jaycode8/chatbot:v2
 ```
 
 > 🗨️ You'll enter an interactive chat. Type messages to the bot. Type `exit` or `quit` to leave.
@@ -66,6 +68,30 @@ docker rm chatbot
 
 ---
 
+# 2. Run Locally via Terminal 💻
+
+Clone the repository
+
+```bash
+git clone https://github.com/jaycode8/simple_cli_chatbot.git
+cd simple_cli_chatbot
+```
+
+Create a virtual environment and install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+🔑 Environment Variables
+
+Be sure to provide your API token in a `.env` file:
+
+```env
+API_TOKEN=your_groq_or_openai_token
+```
+---
+
 ## 📂 Build locally (optional)
 
 If you want to build the image yourself:
@@ -74,17 +100,6 @@ If you want to build the image yourself:
 docker build -t my-chatbot .
 docker run -it my-chatbot
 ```
-
----
-
-## 🔑 Environment Variables
-
-If you're building your own version, be sure to provide your API token in a `.env` file:
-
-```env
-API_TOKEN=your_groq_or_openai_token
-```
-
 ---
 
 Enjoy chatting! 🤖💬
